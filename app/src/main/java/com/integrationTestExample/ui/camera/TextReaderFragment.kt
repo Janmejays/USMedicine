@@ -94,8 +94,8 @@ class TextReaderFragment : Fragment() {
             if (search.isNotEmpty()) {
                 if (search.length > 50)
                     search = search.substring(0, 50)
-                val action = CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
-                findNavController().navigate(action)
+              //  val action = CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
+            //    findNavController().navigate(action)
             }
         }
 

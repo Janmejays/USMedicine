@@ -97,9 +97,9 @@ class BarcodeScannerFragment : Fragment() {
                         val index = 5
                         search.substring(0, index) + char + search.substring(index)
                     }
-                    val action =
-                        CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
-                    findNavController().navigate(action)
+                 //   val action =
+                 //       CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
+             //       findNavController().navigate(action)
 
                 } else if (formatBarcode.equals(Barcode.FORMAT_DATA_MATRIX.toString())) {
                     search = search.substring(5, 15)
@@ -122,9 +122,9 @@ class BarcodeScannerFragment : Fragment() {
                         search.substring(0, index) + char + search.substring(index)
 
                     }
-                    val action =
-                        CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
-                    findNavController().navigate(action)
+                  //  val action =
+               //         CameraFragmentDirections.actionNavigationScanToNavigationSearch(search)
+              //      findNavController().navigate(action)
 
                 } else {
                     Toast.makeText(

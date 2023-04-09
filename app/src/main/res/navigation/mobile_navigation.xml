@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/navigation_scan"
-        android:name="com.integrationTestExample.ui.camera.CameraFragment"
+        android:name="com.integrationTestExample.newUI.ShopFragment"
         android:label="@string/intercation"
         tools:layout="@layout/fragment_camera">
         <action
