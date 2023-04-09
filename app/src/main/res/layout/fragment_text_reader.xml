@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/margin_50x"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/cameraPreviewView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_300x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_250x"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/scan_view"
+            android:src="@mipmap/scan_view"
+            app:layout_constraintBottom_toBottomOf="@id/cameraPreviewView"
+            app:layout_constraintLeft_toLeftOf="@id/cameraPreviewView"
+            app:layout_constraintRight_toRightOf="@id/cameraPreviewView"
+            app:layout_constraintTop_toTopOf="@id/cameraPreviewView" />
+
+        <TextView
+            android:id="@+id/tvCameraAccess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@color/red"
+            android:contentDescription="@string/scan_view"
+            android:padding="@dimen/margin_10x"
+            android:src="@mipmap/scan_view"
+            android:text="@string/please_give_camera_access"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cameraPreviewView"
+            app:layout_constraintLeft_toLeftOf="@id/cameraPreviewView"
+            app:layout_constraintRight_toRightOf="@id/cameraPreviewView"
+            app:layout_constraintTop_toTopOf="@id/cameraPreviewView" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/size_12x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:elevation="@dimen/margin_2x"
+            android:text="@string/scanned_result"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cameraPreviewView" />
+
+        <TextView
+            android:id="@+id/tvTextScanned"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_15x"
+            android:layout_marginTop="@dimen/margin_5x"
+            android:layout_marginEnd="@dimen/margin_15x"
+            android:layout_marginBottom="@dimen/margin_15x"
+            android:background="@color/octave"
+            android:elevation="@dimen/margin_2x"
+            android:hint="@string/scanned_result"
+            android:maxLines="3"
+            android:padding="@dimen/size_10x"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/title_copied"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/size_12x"
+            android:layout_marginTop="@dimen/margin_5x"
+            android:layout_marginBottom="@dimen/margin_5x"
+            android:elevation="@dimen/margin_2x"
+            android:text="@string/selected_text_from_scanned_result"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTextScanned" />
+
+        <com.integrationTestExample.utils.CutCopyPasteEditText
+            android:id="@+id/resultET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15x"
+            android:layout_marginEnd="@dimen/margin_15x"
+            android:background="@color/white"
+            android:cursorVisible="false"
+            android:elevation="@dimen/margin_2x"
+            android:inputType="none"
+            android:maxLength="200"
+            android:maxLines="3"
+            android:padding="@dimen/size_10x"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_copied" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20x"
+            android:background="@color/white"
+            android:foregroundGravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultET">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_15x"
+                android:layout_marginEnd="@dimen/margin_15x"
+                android:backgroundTint="@color/octave"
+                android:gravity="center"
+                android:padding="@dimen/padding_3x"
+                android:text="@string/select_the_text_from_scanned_result"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_12sp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/size_50x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_15x"
+                android:layout_marginEnd="@dimen/margin_15x"
+                android:backgroundTint="@color/octave"
+                android:gravity="center"
+                android:padding="@dimen/padding_3x"
+                android:text="@string/search_the_selected_text"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_12sp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/size_50x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnResult" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="@dimen/size_100x"
+            android:layout_height="@dimen/size_100x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llButton" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/size_22x"
+            android:layout_height="@dimen/size_22x"
+            android:layout_marginTop="@dimen/margin_70x"
+            android:src="@drawable/info_2_4"
+            android:contentDescription="@string/info"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llButton" />
+
+        <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_25x"
+            android:layout_marginEnd="@dimen/margin_5x"
+            android:background="@color/white"
+            android:drawablePadding="@dimen/margin_2x"
+            android:padding="@dimen/padding_3x"
+            android:text="@string/info"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llButton" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

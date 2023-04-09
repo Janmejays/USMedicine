@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.integrationTestExample.ui.list.ListFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_navigation_home_to_interactionFragmentHome"
+            app:destination="@id/navigation_interaction_home" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_scan"
+        android:name="com.integrationTestExample.ui.camera.CameraFragment"
+        android:label="@string/intercation"
+        tools:layout="@layout/fragment_camera">
+        <action
+            android:id="@+id/action_navigation_scan_to_navigation_search"
+            app:destination="@id/navigation_search"
+            app:popUpTo="@id/navigation_scan"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_navigation_scan_to_customDialogPermissions"
+            app:destination="@id/customDialogPermissions" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit"
+        android:name="com.integrationTestExample.ui.edit.EditFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_edit_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_interaction"
+        android:name="com.integrationTestExample.ui.interactions.InteractionFragment"
+        android:label="fragment_interaction"
+        tools:layout="@layout/fragment_interaction">
+        <action
+            android:id="@+id/action_navigation_interaction_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.integrationTestExample.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_interaction"
+            app:destination="@id/navigation_interaction"
+             />
+        <argument
+            android:name="scannedText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_scan"
+            app:destination="@id/navigation_scan" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_interaction_home"
+        android:name="com.integrationTestExample.ui.interactions.InteractionFragmentHome"
+        android:label="fragment_interaction_fragment_home"
+        tools:layout="@layout/fragment_interaction_fragment_home" >
+        <action
+            android:id="@+id/action_interactionFragmentHome_to_navigation_interaction"
+            app:destination="@id/navigation_interaction" />
+    </fragment>
+    <dialog
+        android:id="@+id/customDialogPermissions"
+        android:name="com.integrationTestExample.utils.CustomDialogPermissions"
+        android:label="CustomDialogPermissions" >
+        <action
+            android:id="@+id/action_customDialogPermissions_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </dialog>
+</navigation>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/BarcodePreviewView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_400x"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/graphic_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_300x"
+        android:src="@mipmap/scan_view"
+        android:layout_alignParentStart="true"
+        app:layout_constraintBottom_toBottomOf="@id/BarcodePreviewView"
+        app:layout_constraintLeft_toLeftOf="@id/BarcodePreviewView"
+        app:layout_constraintRight_toRightOf="@id/BarcodePreviewView"
+        app:layout_constraintTop_toTopOf="@id/BarcodePreviewView"
+        android:contentDescription="@string/scan_view" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tvInstruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15x"
+        android:background="@color/white"
+        android:drawablePadding="@dimen/margin_10x"
+        android:padding="@dimen/margin_10x"
+        android:text="@string/data_matrix_code_to_be_recognized_the_code_must_intersect_the_center_point_of_the_input_image"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/size_12sp"
+        app:drawableStartCompat="@drawable/info_2_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BarcodePreviewView" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_15x"
+        android:elevation="@dimen/margin_2x"
+        android:layout_marginStart="@dimen/size_12x"
+        android:text="@string/scanned_result"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInstruction" />
+
+    <TextView
+        android:id="@+id/tvTextScanned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_5x"
+        android:layout_marginBottom="@dimen/margin_15x"
+        android:layout_marginStart="@dimen/margin_15x"
+        android:layout_marginEnd="@dimen/margin_15x"
+        android:background="@color/octave"
+        android:elevation="@dimen/margin_2x"
+        android:hint="@string/scanned_result"
+        android:padding="@dimen/margin_10x"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="@dimen/size_100x"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/scanner_bg"
+        android:elevation="@dimen/margin_2x"
+        android:padding="@dimen/margin_10x"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTextScanned" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15x"
+        android:background="@color/white"
+        android:foregroundGravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTextScanned">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/margin_15x"
+            android:backgroundTint="@color/octave"
+            android:gravity="center"
+            android:padding="@dimen/size_12x"
+            android:text="@string/select"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:cornerRadius="@dimen/size_50x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnSend"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_15x"
+            android:layout_marginEnd="@dimen/margin_15x"
+            android:backgroundTint="@color/octave"
+            android:gravity="center"
+            android:padding="@dimen/size_12x"
+            android:text="@string/search_the_scanned_barcode"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            app:cornerRadius="@dimen/size_50x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnResult"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

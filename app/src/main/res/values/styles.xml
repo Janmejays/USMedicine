@@ -1,0 +1,22 @@
+<resources>
+    <!--    <style name="Theme.App.Starting" parent="Theme.SplashScreen">-->
+    <!--        &lt;!&ndash; Set the splash screen background, animated icon, and animation duration. &ndash;&gt;-->
+    <!--        <item name="windowSplashScreenBackground">@color/black</item>-->
+
+    <!--        &lt;!&ndash; Use windowSplashScreenAnimatedIcon to add either a drawable or an-->
+    <!--             animated drawable. One of these is required. &ndash;&gt;-->
+    <!--        <item name="windowSplashScreenAnimatedIcon">@anim/nav_default_enter_anim</item>-->
+    <!--        &lt;!&ndash; Required for animated icons &ndash;&gt;-->
+    <!--        <item name="windowSplashScreenAnimationDuration">200</item>-->
+
+    <!--        &lt;!&ndash; Set the theme of the Activity that directly follows your splash screen. &ndash;&gt;-->
+    <!--        &lt;!&ndash; Required &ndash;&gt;-->
+    <!--        <item name="postSplashScreenTheme">@style/Platform.MaterialComponents.Light</item>-->
+    <!--    </style>-->
+    <style name="TabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+</resources>
