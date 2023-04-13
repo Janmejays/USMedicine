@@ -154,4 +154,6 @@ dependencies {
 
     implementation "com.parse.bolts:bolts-tasks:1.4.0"
     implementation "com.parse.bolts:bolts-applinks:1.4.0"
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
+

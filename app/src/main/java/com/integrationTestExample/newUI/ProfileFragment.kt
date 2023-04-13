@@ -15,6 +15,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.integrationTestExample.R
 import com.integrationTestExample.databinding.FragmentCameraBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.integrationTestExample.databinding.FragmentProfileBinding
 import com.integrationTestExample.databinding.FragmentShopBinding
 import com.integrationTestExample.ui.camera.BarcodeScannerFragment
 import com.integrationTestExample.ui.camera.TextReaderFragment
@@ -23,7 +24,7 @@ import com.integrationTestExample.ui.camera.TextReaderFragment
 *  ShopFragment contains item list  in adapter and filters
 * */
 class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentShopBinding
+    private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +32,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentShopBinding.inflate(inflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 

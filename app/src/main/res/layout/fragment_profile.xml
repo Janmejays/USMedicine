@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/AppBackColor"
     android:orientation="vertical"
-    tools:context=".newUI.ShopFragment">
+    tools:context=".newUI.ProfileFragment">
 
     <TextView
         android:id="@+id/text_home"
-        android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="30dp"
         android:layout_marginStart="@dimen/margin_8x"
         android:text="@string/shop"
         android:textAlignment="center"
@@ -22,31 +22,108 @@
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <androidx.appcompat.widget.LinearLayoutCompat
+
+    <FrameLayout
         android:id="@+id/ll_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_home">
 
-        <ImageView
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:drawablePadding="10dp"
-            android:src="@drawable/img"
-            android:id="@+id/tv_filter"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="280dp"
+            android:layout_gravity="center"
+            android:drawablePadding="10dp"
+            android:src="@drawable/profile_image"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
+        <ImageView
+            android:contentDescription="edit image"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="230dp"
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit"
+          />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E1E1E"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            android:text="Product name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/small_icon"
+            android:drawablePadding="10dp"
+            android:maxLines="1"
+            android:text="100"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:maxLines="4"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1D2939"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:backgroundTint="#E82749"
+            android:text="Buy now"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
