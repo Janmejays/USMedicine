@@ -1,8 +1,8 @@
-USMedicine-Interactort  App
+USMedicine  App
 
 App Description: 
 
-- USMedicine-Interactort App is an android mobile application, which helps the user to save the drugs as list with interaction details(Drug which has the interaction with the another drug added in the list) using the phone’s camera for scanning the medication’s name/Barcode/QR code.
+- USMedicine App is an android mobile application, which helps the user to save the drugs as list with interaction details(Drug which has the interaction with the another drug added in the list) using the phone’s camera for scanning the medication’s name/Barcode/QR code.
 
 
 List Menu:
